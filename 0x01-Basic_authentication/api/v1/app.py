@@ -25,7 +25,7 @@ if os.getenv("AUTH_TYPE"):
 
 @app.before_request
 def before_request():
-    """ 
+    """
     before request
     """
     if not auth:
