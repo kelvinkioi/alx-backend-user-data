@@ -16,7 +16,7 @@ class Auth:
         """
         if path is None or excluded_paths is None or not len(excluded_paths):
             return True
-        
+
         if not path.endswith('/'):
             path += '/'
 
@@ -28,7 +28,9 @@ class Auth:
     def authorization_header(self, request=None) -> str:
         """authorization_header
         """
-        return None
+        if request is None or 'Authorization' not in request.headers:
+            return None
+        return request.headers.get('Authorization')
 
     def current_user(self, request=None) -> User:
         """current_user
