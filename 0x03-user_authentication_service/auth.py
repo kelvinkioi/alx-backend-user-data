@@ -55,7 +55,8 @@ class Auth:
 
     def valid_login(self, email: str, password: str) -> bool:
         """
-        expects an email and a password as required arguments and return a boolean
+        expects an email and a password as required arguments
+        and return a boolean
         """
         try:
             user = self._db.find_user_by(email=email)
